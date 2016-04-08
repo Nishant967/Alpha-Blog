@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   #get 'welcome/about', to :'welcome#about'
  # get 'welcome/home', to: 'welcome#home'
   get 'about', to: 'welcome#about'
+ # routes for articles
+  resources :articles
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
