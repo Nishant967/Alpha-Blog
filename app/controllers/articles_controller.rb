@@ -16,8 +16,10 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    #debugger
     #render plain: params[:article].inspect
     @article = Article.new(article_params)
+    @article.user = User.first
     # checking fo validation here
     if @article.save
       flash[:success] = " Article created successfully"
