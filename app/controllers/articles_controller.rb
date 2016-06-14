@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
     @article.user = current_user
     # checking fo validation here
     if @article.save
-      flash[:success] = " Article created successfully"
+      flash[:success] = " Story created successfully"
       redirect_to article_path(@article)
     else
       render 'new'
@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
   #  @article = Article.find(params[:id])
     @article.user = current_user
     if @article.update(article_params)
-      flash[:success] = " Article updated successfully"
+      flash[:success] = " Story updated successfully"
       redirect_to article_path(@article)
     else
       render 'edit'
@@ -47,7 +47,7 @@ class ArticlesController < ApplicationController
   def destroy
    # @article = Article.find(params[:id])
     @article.destroy
-    flash[:danger] = " Article deleted successfully"
+    flash[:danger] = " Story deleted successfully"
     redirect_to articles_path
   end
 
