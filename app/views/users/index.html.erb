@@ -13,7 +13,12 @@
         </li>
         <li><small>
           <%= pluralize(user.articles.count, "story") if user.articles %>
-          </small></li>
+          </small>
+        </li>
+        <% if logged_in? and current_user.admin? %>
+        <li> <%= link_to "Delete", user_path(user), method: :delete, data: {confirm: "Are you sure?"} %>
+        </li>
+        <% end %>
       </div>
     </div>
   </ul>
